@@ -1,7 +1,11 @@
 #!/usr/bin/env ruby
 
+$LOAD_PATH << File.expand_path('../../lib', __FILE__)
+
 require 'optparse'
 require 'prime'
+require 'multiplication_table'
+require 'ascii_formatter'
 
 options = {}
 OptionParser.new do |opts|
