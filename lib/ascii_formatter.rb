@@ -8,9 +8,11 @@ class AsciiFormatter
     end
   end
 
+  protected
+
   def header_row(numbers)
-    row = sprintf("%5s", ' ')
-    row + numbers.collect { |number| sprintf("%4s", number) }.join
+    row = format_with_padding(' ', 5)
+    row + numbers.collect { |number| format_with_padding(number, 4) }.join
   end
 
   def header_border(columns, width)
@@ -18,9 +20,15 @@ class AsciiFormatter
   end
 
   def inner_row(number, data)
-    row = sprintf("%3s", number)
-    row += sprintf("%2s", '|')
-    row + data.collect { |result| sprintf("%4s", result) }.join
+    row = format_with_padding(number, 3)
+    row += format_with_padding('|', 2)
+    row + data.collect { |result| format_with_padding(result, 4) }.join
+  end
+
+  private
+
+  def format_with_padding(value, padding=4)
+    sprintf("%#{padding}s", value)
   end
 
 end
