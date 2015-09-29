@@ -1,4 +1,4 @@
-require_relative '../lib/ascii_formatter'
+require 'ascii_formatter'
 
 describe 'AsciiFormatter' do
 

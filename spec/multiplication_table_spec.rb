@@ -1,4 +1,4 @@
-require_relative '../lib/multiplication_table'
+require 'multiplication_table'
 
 describe 'MultiplicationTable' do
 

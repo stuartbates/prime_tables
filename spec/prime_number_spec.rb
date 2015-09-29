@@ -1,4 +1,4 @@
-require_relative '../lib/prime_number'
+require 'prime_number'
 
 describe 'PrimeNumber' do
 
