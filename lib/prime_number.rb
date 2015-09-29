@@ -1,5 +1,8 @@
+require 'singleton'
+
 class PrimeNumber
 
+  include Singleton
   include Enumerable
 
   def initialize
@@ -12,15 +15,19 @@ class PrimeNumber
     loop { yield self.next }
   end
 
+  def [](index)
+    generate_primes while @primes.size <= index
+    @primes[index]
+  end
+
+  protected
+
   def next
     @last_prime_index += 1
     self[@last_prime_index]
   end
 
-  def [](index)
-    generate_primes while @primes.size <= index
-    @primes[index]
-  end
+  private
 
   # Based on: https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
   def generate_primes

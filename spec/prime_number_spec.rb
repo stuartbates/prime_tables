@@ -2,7 +2,7 @@ require_relative '../lib/prime_number'
 
 describe 'PrimeNumber' do
 
-  let(:prime) { PrimeNumber.new }
+  let(:prime) { PrimeNumber.instance }
 
   describe '#first' do
 
@@ -41,8 +41,8 @@ describe 'PrimeNumber' do
   describe '#calculate_break_point' do
 
     it 'returns the square root of the batch maximum' do
-      expect(prime.calculate_break_point(120)).to eq(10)
-      expect(prime.calculate_break_point(122)).to eq(11)
+      expect(prime.send(:calculate_break_point, 120)).to eq(10)
+      expect(prime.send(:calculate_break_point, 122)).to eq(11)
     end
 
   end
