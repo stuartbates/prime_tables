@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+require 'optparse'
+require 'prime'
+
+options = {}
+OptionParser.new do |opts|
+  opts.on('-c', '--count count', 'Number of primes') { |c| options[:count] = c.to_i }
+end.parse!
+
+primes = Prime.first(options[:count])
+MultiplicationTable.new(primes, AsciiFormatter.new).output
