@@ -1,4 +1,6 @@
 class MultiplicationTable
+  
+  attr_accessor :numbers, :data
 
   def initialize(numbers, formatter)
     @numbers, @formatter = numbers, formatter
