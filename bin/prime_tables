@@ -12,5 +12,5 @@ OptionParser.new do |opts|
   opts.on('-c', '--count count', 'Number of primes') { |c| options[:count] = c.to_i }
 end.parse!
 
-primes = Prime.first(options[:count])
+primes = Prime.first(options[:count] || 10)
 MultiplicationTable.new(primes, AsciiFormatter.new).output
