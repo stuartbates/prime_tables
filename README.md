@@ -1,4 +1,4 @@
-# prime_tables
+# Prime Tables
 
 ##Objective
 
@@ -18,7 +18,7 @@ An example of the way the application may run:
   - It doesn't rely on prime numbers - you could just as easily swap these out for sequential, odd or composite numbers etc...
 - If I'd been able to find a gem to handle the table outputting out-the-box I'd probably have done away with the explicit formatter class and simply passed in the strategy as a block.
 - I've generated prime numbers using the Eratosthenes Sieve algorithm - it's a fairly basic implementation based off the Wikipedia article which could be improved - e.g:
-- Abstracting out the generation strategy itself to allow for other strategies
-- Delegating off the class down to the enumerable methods on the instance (as the Ruby library version does) which would provide a much nicer interface.  
-- However given there's already a perfectly good Prime class in Ruby I felt this might be over-engineering for this case.
+  - Abstracting out the generation strategy itself to allow for other strategies
+  - Delegating off the class down to the enumerable methods on the instance (as the Ruby library version does) which would provide a much nicer interface.  
+  - However given there's already a perfectly good Prime class in Ruby I felt this might be over-engineering for this case.
 - After some quick UAT I've realised it could be improved by setting the column width of the table dynamically as larger numbers/products will start to overlap.  I haven't implemented it here but would be pretty straightforward with something like: (highest_number * highest_number).to_s.length
