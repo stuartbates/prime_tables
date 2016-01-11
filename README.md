@@ -1,4 +1,4 @@
-# Prime Tables
+# Prime Tables ![Build Status](https://travis-ci.org/stuartbates/prime_tables.svg?branch=master) [![Coverage Status](https://coveralls.io/repos/stuartbates/prime_tables/badge.svg?branch=master&service=github)](https://coveralls.io/github/stuartbates/prime_tables?branch=master)
 
 ##Objective
 
