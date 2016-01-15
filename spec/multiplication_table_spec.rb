@@ -6,15 +6,6 @@ describe 'MultiplicationTable' do
   let(:formatter) { double('formatter') }
   let(:table) { MultiplicationTable.new(numbers, formatter) }
 
-  describe '#initialize' do
-
-    it 'assigns instance variables during initialisation' do
-      expect(table.instance_variable_get(:@numbers)).to eq(numbers)
-      expect(table.instance_variable_get(:@formatter)).to eq(formatter)
-    end
-
-  end
-
   describe '#output' do
     it 'should call output on the formatter and pass in self as context' do
       expect(formatter).to receive(:output).with(table)
